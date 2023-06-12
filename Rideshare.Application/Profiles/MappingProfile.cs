@@ -1,4 +1,5 @@
 using AutoMapper;
+using Rideshare.Application.Common.Dtos.Feedbacks;
 using Rideshare.Application.Common.Dtos.Tests;
 using Rideshare.Domain.Entities;
 
@@ -11,7 +12,12 @@ public class MappingProfile: Profile
             #region TestEntity Mappings
 
             CreateMap<TestEntity, TestEntityDto>().ReverseMap();
-            
-            #endregion TestEntity
+
+        #endregion TestEntity
+        #region
+        CreateMap<CreateFeedbackDto, Feedback>().ReverseMap();
+        CreateMap<UpdateFeedbackDto, Feedback>().ReverseMap();
+        CreateMap<FeedbackDto, Feedback>().ReverseMap();
+        #endregion
     }
 }
