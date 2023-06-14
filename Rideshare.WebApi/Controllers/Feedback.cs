@@ -30,7 +30,7 @@ namespace Rideshare.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetAll(int id)
         {
             var result = await _mediator.Send(new GetFeedbackDetailQuery { Id = id });
             var status = result.Success ? HttpStatusCode.OK : HttpStatusCode.NotFound;

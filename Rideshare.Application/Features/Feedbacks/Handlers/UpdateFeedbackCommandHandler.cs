@@ -36,7 +36,7 @@ namespace Rideshare.Application.Features.Feedbacks.Handlers
             }
 
             var feedback = _mapper.Map<Feedback>(request.feedbackDto);
-            var noOperations = await _unitOfWork.FeedbackRepository.Add(feedback);
+            var noOperations = await _unitOfWork.FeedbackRepository.Update(feedback);
             if (noOperations > 0)
             {
                 return resultResponse.SuccessReponse();
